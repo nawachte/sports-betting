@@ -69,7 +69,7 @@ def run_moneylines(moneylines,bet=10):
             b2t1_odds = bmatch[1][1]
             b2t2_odds = bmatch[1][2]
             out_string += compute_arbitrage(b1,b2,t1,t2,b1t1_odds,b1t2_odds,b2t1_odds,b2t2_odds,bet)
-    out_string += compute_arbitrage("book1","book2","team1","team2",110,-123,-127,123,bet) # test
+    # out_string += compute_arbitrage("book1","book2","team1","team2",110,-123,-127,123,bet) # testing
     return out_string
 
 # [[[[[[[[[[[[[[[[[]]]]]]]]]]]]]]]]]
@@ -79,8 +79,8 @@ def run_calculations():
     return run_moneylines(moneylines)
 
 def send_email(to_address, subject, body):
-    from_address = "throwawayasdf172@gmail.com"
-    app_password = "mxcztiggwbellypb"
+    from_address = "############@gmail.com"
+    app_password = "###############"
 
     msg = MIMEText(body)
     msg['Subject'] = subject
@@ -96,10 +96,10 @@ def job():
     try:
         result = run_calculations()
         if result.strip():  # Check if the string is not empty
-            send_email("nawachter50@gmail.com", "sports betting", result)
+            send_email("###########@gmail.com", "sports betting", result)
     except Exception as e:
         send_email(
-            "nawachter50@gmail.com",
+            "###########@gmail.com",
             "sports betting error",
             f"An error occurred: {e}"
         )
