@@ -117,4 +117,11 @@ def get_NFL_moneylines():
 def get_NBA_moneylines():
     return get_moneylines("basketball_nba","#######################")
 
-        
+def american_odds_to_breakeven(odds):
+    if odds > 0:
+        breakeven = 100 / (odds + 100)
+    else:
+        breakeven = abs(odds) / (abs(odds) + 100)
+    
+    return round(breakeven * 100, 4)
+
